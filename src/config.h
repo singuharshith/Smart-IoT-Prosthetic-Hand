@@ -1,0 +1,51 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#include <Arduino.h>
+
+// Board and debug
+#define DEBUG_BAUD_RATE 115200
+#define ENABLE_DEBUG true
+
+// Sensor setup
+#define SENSOR_COUNT 5
+const uint8_t SENSOR_PINS[SENSOR_COUNT] = {A0, A1, A2, A3, A4};
+#define POTENTIOMETER_PIN A5
+#define SENSOR_SAMPLE_INTERVAL_MS 30
+#define MOVING_AVERAGE_WINDOW 8
+
+// Servo setup
+#define SERVO_COUNT 5
+const uint8_t SERVO_PINS[SERVO_COUNT] = {3, 5, 6, 9, 10};
+#define MIN_SERVO_ANGLE 10
+#define MAX_SERVO_ANGLE 170
+#define SERVO_HOMING_ANGLE 90
+#define SERVO_STEP_DELAY_MS 12
+#define SERVO_STEP_INCREMENT 1
+
+// Gesture thresholds
+#define GESTURE_THRESHOLD 32
+#define SAFE_SERVO_STEP 2
+#define SERIAL_LOG_INTERVAL_MS 500
+
+// EEPROM storage layout
+#define EEPROM_CALIBRATION_FLAG 0
+#define EEPROM_CALIBRATION_OFFSET 1
+#define EEPROM_CALIBRATION_SIGNATURE 0xA5
+
+// Calibration storage indexes
+enum CalibrationIndex {
+  EEPROM_OFFSET_MIN_BASE = EEPROM_CALIBRATION_OFFSET,
+  EEPROM_OFFSET_MAX_BASE = EEPROM_OFFSET_MIN_BASE + SENSOR_COUNT,
+  EEPROM_OFFSET_THRESHOLD_BASE = EEPROM_OFFSET_MAX_BASE + SENSOR_COUNT,
+  EEPROM_OFFSET_END = EEPROM_OFFSET_THRESHOLD_BASE + SENSOR_COUNT
+};
+
+// Gesture and control modes
+enum ControlMode {
+  MODE_NORMAL = 0,
+  MODE_CALIBRATION = 1,
+  MODE_DEBUG = 2
+};
+
+#endif // CONFIG_H

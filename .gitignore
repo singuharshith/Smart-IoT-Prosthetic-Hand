@@ -1,0 +1,22 @@
+# Arduino
+*.ino.cpp
+*.ino.~
+*.tmp
+*.bak
+*.swp
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Temporary files
+*.log
+*.cache
