@@ -19,8 +19,7 @@ This repository showcases a professional engineering-grade embedded systems proj
 - EEPROM-backed calibration and gesture threshold storage
 - Modular firmware architecture with sensor, servo, gesture, filter, and utility layers
 - Serial diagnostics and debug mode for rapid hardware validation
-- Comprehensive hardware wiring and setup documentation
-- Prepared for future integration with EMG, Bluetooth, WiFi, and AI gesture prediction
+- Compact and practical firmware for a prototype prosthetic hand
 
 ## Hardware Requirements
 
@@ -50,18 +49,11 @@ Smart-IoT-Prosthetic-Hand/
 ├── LICENSE
 ├── .gitignore
 ├── docs/
-│   ├── architecture.md
 │   ├── hardware_setup.md
-│   ├── calibration_guide.md
-│   └── future_scope.md
+│   └── calibration_guide.md
 ├── hardware/
-│   ├── circuit_diagram.png
 │   ├── pin_connections.md
 │   └── components_list.md
-├── images/
-│   ├── prototype.jpg
-│   ├── setup.jpg
-│   └── demo.jpg
 ├── src/
 │   ├── main.ino
 │   ├── config.h
@@ -77,16 +69,10 @@ Smart-IoT-Prosthetic-Hand/
 │   ├── filters.cpp
 │   ├── utilities.h
 │   └── utilities.cpp
-├── testing/
-│   ├── sensor_test.ino
-│   ├── servo_test.ino
-│   └── calibration_test.ino
-├── demo/
-│   └── demo_description.md
-└── future_modules/
-    ├── emg_integration.md
-    ├── bluetooth_module.md
-    └── ai_prediction_module.md
+└── testing/
+    ├── sensor_test.ino
+    ├── servo_test.ino
+    └── calibration_test.ino
 ```
 
 ## Circuit Explanation
@@ -129,19 +115,13 @@ The prosthetic hand uses a single Arduino UNO to read 5 analog IR sensors and dr
 
 See `demo/demo_description.md` for how the hand behaves during a hardware demo. The system is designed to demonstrate smooth finger motion, reliable sensor mapping, and robust calibration.
 
-## Screenshots
-
-![Prototype](images/prototype.jpg)
-![Setup](images/setup.jpg)
-![Demo](images/demo.jpg)
-
 ## Future Scope
 
-This repository includes dedicated modules and documentation for future hardware and software upgrades such as EMG signal integration, wireless control, mobile app connectivity, and AI-driven gesture prediction.
+This repository is intentionally streamlined for the prototype. It includes the essential firmware, wiring notes, and calibration documentation needed to understand and reproduce the Smart IoT Prosthetic Hand.
 
 ## Author
 
-Developed as a research-driven prototype combining embedded systems, robotics, and IoT innovation. Ideal for robotics hackathons, embedded design portfolios, and assistive technology demonstrations.
+Developed in 2024 as a research-driven prototype combining embedded systems, robotics, and IoT innovation. Ideal for robotics hackathons, embedded design portfolios, and assistive technology demonstrations.
 
 ## GitHub Topics
 
